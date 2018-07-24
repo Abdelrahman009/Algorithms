@@ -1,0 +1,78 @@
+#include <iostream>
+#include <fstream>
+#include "Collection/QuickSort/QuickSortEngine.h"
+#include "Collection/UnionFind/DisjointSets.h"
+#include "Collection/Graph/UnDirectedGraph.h"
+#include "Collection/MinimumCutFinder/MinimumCutFinder.h"
+
+using namespace std;
+
+int main() {
+//    vector<long long> numbers;
+//    string line;
+//    ifstream myfile ("input.txt");
+//    if (myfile.is_open())
+//    {
+//        while ( getline (myfile,line) )
+//        {
+//            numbers.push_back(stoi(line));
+//        }
+//        myfile.close();
+//    }
+//
+//    else cout << "Unable to open file";
+//
+//
+
+
+//    InversionsCounter counter(numbers.size());
+//    cout<<counter.countAndMergeSortAlg(numbers,0,numbers.size()-1)<<endl;
+
+//    Selector s;
+//    cout<<s.select(numbers,0,numbers.size() - 1, 500);
+//
+//
+//    QuickSortEngine engine;
+//    engine.sort(numbers,0,numbers.size()-1);
+//
+//    cout<<engine.numberOfcomparisons<<endl;
+//
+//    cout<<numbers[200];
+
+
+    UnDirectedGraph graph;
+    graph.addVertex(0,"0");
+    graph.addVertex(1,"0");
+    graph.addVertex(2,"0");
+    graph.addVertex(3,"0");
+    graph.addVertex(4,"0");
+    graph.addVertex(5,"0");
+    graph.addVertex(6,"0");
+    graph.addVertex(7,"0");
+
+
+    graph.addEdge(0,1,1);
+    graph.addEdge(0,5,1);
+    graph.addEdge(0,4,1);
+    graph.addEdge(1,4,1);
+    graph.addEdge(1,5,1);
+    graph.addEdge(1,2,1);
+    graph.addEdge(2,6,1);
+    graph.addEdge(2,7,1);
+    graph.addEdge(2,3,1);
+    graph.addEdge(3,6,1);
+    graph.addEdge(3,7,1);
+    graph.addEdge(4,5,1);
+    graph.addEdge(5,6,1);
+    graph.addEdge(6,7,1);
+    graph.addEdge(6,1,1);
+
+
+    MinimumCutFinder finder;
+
+    cout<<finder.findMinimumCut(graph);
+
+
+
+    return 0;
+}
